@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\hiro1\Desktop\c++\1006part2\1006part2\main.cpp(147,10): warning C4477: 'printf' : 書式文字列 '%d' には、型 'int' の引数が必要ですが、可変個引数 1 は型 'int *' です
+  1006part2.vcxproj -> C:\Users\hiro1\Desktop\c++\1006part2\Debug\1006part2.exe
