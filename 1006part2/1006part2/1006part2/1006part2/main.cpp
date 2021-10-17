@@ -127,31 +127,65 @@ deleteをした後のポインタ変数にnullptrを入れておいて、
 //		printf("%d\n", newArray[i]);
 //	}
 //}
+//
+//class TestClass
+//{
+//public:
+//	TestClass()
+//	{
+//		newArray = new int[1000];
+//	}
+//	~TestClass()
+//	{
+//		delete[] newArray;
+//		newArray = nullptr;
+//		printf("%p\n", newArray);
+//	}
+//
+//public:
+//	int* newArray;
+//};
+//int main()
+//{
+//	TestClass test;
+//	for (int i = 0; i < 1000; i++)
+//	{
+//		test.newArray[i] = i * 1;
+//		printf("%d\n", test.newArray[i]);
+//	}
+//}
 
-class TestClass
+
+
+class Array
 {
 public:
-	TestClass()
-	{
-		newArray = new int[1000];
-	}
-	~TestClass()
+	Array() { newArray = nullptr; }
+	int Get(int num) { return num; }
+	void Set(int setary) { num = setary; };
+	void Create(int ary) { newArray = new int[ary]; }
+	~Array()
 	{
 		delete[] newArray;
 		newArray = nullptr;
-		printf("%p\n", newArray);
 	}
-
-public:
+private:
+	int num;
 	int* newArray;
 };
 int main()
 {
-	TestClass test;
-	for (int i = 0; i <1000 ; i++)
+	Array array;
+
+	array.Create(1000);
+
+	for (int i = 0; i < 1000; ++i)
 	{
-		test.newArray[i] = i * 1;
-		printf("%d\n", test.newArray[i]);
+		array.Set(i);
+	}
+
+	for (int i = 0; i < 1000; ++i)
+	{
+		printf("num = %d\n", array.Get(i));
 	}
 }
-
